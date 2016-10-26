@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E1346D61DC0D63400B709E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1346D51DC0D63400B709E5 /* LoginViewController.swift */; };
 		69FD4C211CB431FB6C66257E /* Pods_ParseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DA76395EB4FBE77AA617C3 /* Pods_ParseChat.framework */; };
 		99D84D191DC0D45F006923DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D84D181DC0D45F006923DE /* AppDelegate.swift */; };
-		99D84D1B1DC0D45F006923DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D84D1A1DC0D45F006923DE /* ViewController.swift */; };
 		99D84D1E1DC0D45F006923DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99D84D1C1DC0D45F006923DE /* Main.storyboard */; };
 		99D84D201DC0D45F006923DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99D84D1F1DC0D45F006923DE /* Assets.xcassets */; };
 		99D84D231DC0D45F006923DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99D84D211DC0D45F006923DE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E1346D51DC0D63400B709E5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6F992589D3F8D98A6524165D /* Pods-ParseChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParseChat/Pods-ParseChat.release.xcconfig"; sourceTree = "<group>"; };
 		83A4CA395FF8710B443262DD /* Pods-ParseChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParseChat/Pods-ParseChat.debug.xcconfig"; sourceTree = "<group>"; };
 		99D84D151DC0D45F006923DE /* ParseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99D84D181DC0D45F006923DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99D84D1A1DC0D45F006923DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		99D84D1D1DC0D45F006923DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99D84D1F1DC0D45F006923DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99D84D221DC0D45F006923DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +48,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2E1346D41DC0D62900B709E5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2E1346D51DC0D63400B709E5 /* LoginViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		99D84D0C1DC0D45F006923DE = {
 			isa = PBXGroup;
 			children = (
@@ -69,8 +77,8 @@
 		99D84D171DC0D45F006923DE /* ParseChat */ = {
 			isa = PBXGroup;
 			children = (
+				2E1346D41DC0D62900B709E5 /* Controller */,
 				99D84D181DC0D45F006923DE /* AppDelegate.swift */,
-				99D84D1A1DC0D45F006923DE /* ViewController.swift */,
 				99D84D1C1DC0D45F006923DE /* Main.storyboard */,
 				99D84D1F1DC0D45F006923DE /* Assets.xcassets */,
 				99D84D211DC0D45F006923DE /* LaunchScreen.storyboard */,
@@ -211,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99D84D1B1DC0D45F006923DE /* ViewController.swift in Sources */,
+				2E1346D61DC0D63400B709E5 /* LoginViewController.swift in Sources */,
 				99D84D191DC0D45F006923DE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
