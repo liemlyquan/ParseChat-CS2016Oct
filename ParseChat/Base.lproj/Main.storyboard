@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ogB-Ud-kJP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ogB-Ud-kJP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -87,16 +87,40 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b5s-qd-SWd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b5s-qd-SWd">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jQC-2d-RXA">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" rowHeight="75" id="jQC-2d-RXA" customClass="MessageTableViewCell" customModule="ParseChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jQC-2d-RXA" id="ozm-op-lky">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTm-dv-Ri4">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYl-0L-Uf9">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tYl-0L-Uf9" firstAttribute="top" secondItem="ozm-op-lky" secondAttribute="top" constant="8" id="fis-kT-ooU"/>
+                                                <constraint firstAttribute="trailing" secondItem="VTm-dv-Ri4" secondAttribute="trailing" constant="8" id="lue-rf-NFD"/>
+                                                <constraint firstItem="tYl-0L-Uf9" firstAttribute="leading" secondItem="ozm-op-lky" secondAttribute="leading" constant="8" id="nl7-48-ugZ"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VTm-dv-Ri4" secondAttribute="bottom" constant="8" id="tLc-iC-dtF"/>
+                                                <constraint firstItem="VTm-dv-Ri4" firstAttribute="leading" secondItem="ozm-op-lky" secondAttribute="leading" constant="8" id="taj-x5-gZH"/>
+                                                <constraint firstItem="VTm-dv-Ri4" firstAttribute="top" secondItem="tYl-0L-Uf9" secondAttribute="bottom" constant="8" id="zL3-gM-R0d"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLable" destination="VTm-dv-Ri4" id="sjM-TT-4cI"/>
+                                            <outlet property="userLable" destination="tYl-0L-Uf9" id="ats-hJ-ZmM"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -123,7 +147,14 @@
                             <constraint firstAttribute="trailing" secondItem="b5s-qd-SWd" secondAttribute="trailing" id="yu1-AD-TE7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Chat" id="I70-tq-EUO"/>
+                    <navigationItem key="navigationItem" title="Chat" id="I70-tq-EUO">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="4Xh-1A-aZe">
+                            <connections>
+                                <action selector="onLogout:" destination="rJJ-sI-o7J" id="CGY-Yp-Oh4"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="pAJ-pZ-aPI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="messageTextField" destination="Hkh-Hc-vW1" id="Soy-E7-sEw"/>
                         <outlet property="tableView" destination="b5s-qd-SWd" id="oAV-QB-fG9"/>
@@ -131,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DWY-8k-1ei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2604" y="135"/>
+            <point key="canvasLocation" x="2602.5" y="134.1549295774648"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="14a-Lr-Lml">
@@ -170,4 +201,7 @@
             <point key="canvasLocation" x="1812" y="136.28185907046478"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="pAJ-pZ-aPI"/>
+    </inferredMetricsTieBreakers>
 </document>
