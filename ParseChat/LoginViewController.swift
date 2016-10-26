@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        initUser()
         // Do any additional setup after loading the view.
     }
     
@@ -29,12 +29,19 @@ class LoginViewController: UIViewController {
     @IBAction func onLogin(_ sender: AnyObject) {
         PFUser.logInWithUsername(inBackground: txtUsername.text!, password: txtPassword.text!, block: { (user, error) in
             if((user) != nil){
-                print("scuess")
+                self.performSegue(withIdentifier: "LoginSegue", sender: self)
             }
             else{
                 print("fail")
             }
         })
+    }
+    
+    func initUser(){
+        if ((PFUser.current()) != nil){
+            self.performSegue(withIdentifier: "LoginSegue", sender: self)
+
+        }
     }
     
     @IBAction func onSignUp(_ sender: AnyObject) {
@@ -58,5 +65,9 @@ class LoginViewController: UIViewController {
             }
             
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
     }
 }

@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.server = "http://nguoimay.herokuapp.com/parse"
         }
         Parse.initialize(with: configuration)
+
         return true
     }
 
